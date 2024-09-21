@@ -16,7 +16,7 @@ public class ArmstrongNumber {
         if (sumOfPowers == originalNumber) {
             System.out.println(originalNumber + " is an Armstrong number!");
         } else {
-            System.out.println(originalNumber + " is not an Armstrong number!");
+            System.out.println(originalNumber + " is not an Armstrong number!!");
         }
     }
 }
