@@ -23,6 +23,9 @@ public class PrimesInArray {
             if (isPrime) {
                 System.out.println(a[i] + " is a prime number");
             }
+            else{
+                System.out.println(a[i] + " is not a prime number");
+            }
         }
     }
 }
