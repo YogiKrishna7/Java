@@ -1,0 +1,1 @@
+person1.calSal(); // Call to calculate salary
