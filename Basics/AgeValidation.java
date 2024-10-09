@@ -11,7 +11,7 @@ class AgeNotValidException extends Exception {
 
 }
 
-public class CustomException {
+public class AgeValidation {
 
     // Method to validate the user's age
     void validateAge(int age) throws AgeNotValidException {
@@ -31,7 +31,7 @@ public class CustomException {
         int ageInput = input.nextInt(); // Store user input
 
         // Create an instance of CustomException
-        CustomException ob1 = new CustomException();
+        AgeValidation ob1 = new AgeValidation();
         try {
             // Call the method to validate the age
             ob1.validateAge(ageInput);

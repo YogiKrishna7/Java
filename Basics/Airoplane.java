@@ -3,7 +3,7 @@ public class Airoplane {
     void flightStatus(int fNumber, String from, String to, double arrivalTime, double departureTime) {
         double currentArrivalTime = 11.30;
 
-        double timeDifference = Math.round((arrivalTime - currentArrivalTime) * 60);
+        int timeDifference = (int) Math.round((arrivalTime - currentArrivalTime) * 60);
 
         if (arrivalTime == currentArrivalTime) {
             System.out.println("The flight Number " + fNumber + " From: " + from + " Flying To " + to + " Flight Is On Time!");
