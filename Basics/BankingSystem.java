@@ -1,5 +1,10 @@
-
 import java.util.Scanner;
+class LessThanZeroException extends Exception{
+    public LessThanZeroException(String n) {
+        super(n);
+    }
+ }
+
 
 class AccountDetails {
 
@@ -39,11 +44,14 @@ class AccountDetails {
         }
     }
 
-    public void withdraw() {
+    public void withdraw() throws LessThanZeroException {
         System.out.print("How Much you want to Withdraw?: ");
         double withdrawAmount = input.nextDouble();
         if (withdrawAmount <= 0) {
-            System.out.print("Can't Withdraw 0 or Negative Amount!");
+            // System.out.print("Can't Withdraw 0 or Negative Amount!");
+
+            throw new LessThanZeroException("Can't Withdraw 0 or Negative Amount!");
+
         } else if (withdrawAmount > balance) {
             System.out.print("Insufficient balance to withdrawal!");
         } else {
@@ -160,7 +168,11 @@ public class BankingSystem {
                         String acNo1 = input.next();
                         for (AccountDetails account : acNames) {
                             if (acNo1.equals(account.getAccountNumber())) {
-                                account.withdraw();
+                                try {
+                                    account.withdraw();
+                                } catch (LessThanZeroException e) {
+                                    System.out.println(e);
+                                }
                                 break;
                             }
                         }
