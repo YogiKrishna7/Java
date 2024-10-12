@@ -1,4 +1,4 @@
-public class ArraysExample {
+public class ArraysEvenOddElements {
 
     public static void main(String[] args) {
         int[] a = {11, 42, 13, 44, 55, 67};

@@ -1,5 +1,5 @@
 
-public class reverseWord {
+public class WordReverse {
 
     public static void main(String[] args) {
         String sentence = "welcome to java";
