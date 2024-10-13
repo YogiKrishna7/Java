@@ -1,77 +1,44 @@
 /* 
-3) Write a Java program to create a class called "Employee" with a name, salary, and hire
-date attributes, and a method to calculate years of service. For Temporary Employee &
-Permanent employee 
+10) Write a Java program to create a class called Employee with methods called work() and
+getSalary(). Create a subclass called HRManager that overrides the work() method and adds
+a new method called addEmployee(). 
+
+the Employee class has a work() method that prints a message and a getSalary() method
+that returns the employee's salary. The HRManager subclass extends the Employee class and
+overrides the work() method to display a different message. It adds a method
+addEmployee() that prints a message indicating that a new employee is being added. The
+Main class creates an instance of Employee and HRManager, calls the work() and getSalary()
+methods, and also calls the addEmployee() method on the HRManager object.
 */
 
-import java.time.LocalDate;
-import java.time.Period;
-
-class Employee {
-
-    String name;
-    double salary;
-    LocalDate hireDate;
-
-    public void setDetails(String n, double sal, LocalDate hDate) {
-        this.name = n;
-        this.salary = sal;
-        this.hireDate = hDate;
+class Employee{
+    void work(){
+        System.out.println("Employee Works");
     }
-
-    public void displayInfo() {
-        System.out.println("Employee Name: " + name);
-        System.out.println("Salary: " + salary);
-        System.out.println("Hire Date: " + hireDate);
+    int getSalary(int sal){
+        return sal;
     }
 }
 
-class Temporary extends Employee {
-
-    LocalDate contractEndsIn;
-
-    public void setDetails(String n, double sal, LocalDate hDate, int contractTime) {
-        super.setDetails(n, sal, hDate);
-        this.contractEndsIn = hDate.plusYears(contractTime);
-    }
-
+class HRManager extends Employee{
     @Override
-    public void displayInfo() {
-        System.out.println("Employee Type: Temporary");
-        super.displayInfo();
-        System.out.println("End of Contract: " + contractEndsIn);
-        
+    void work(){
+        System.out.println("HR working");
     }
-}
-
-class Permanent extends Employee {
-
-    public void setDetails(String n, double sal, LocalDate hDate) {
-        super.setDetails(n, sal, hDate);
-    }
-
-    @Override
-    public void displayInfo() {
-        System.out.println("Employee Type: Permanent");
-        super.displayInfo();
-        LocalDate currentDate = LocalDate.now();
-        System.out.println("Years of service: " + Period.between(super.hireDate, currentDate).getYears());
-        
+    void addEmployee(){
+        System.out.println("Adding Employee");
     }
 }
 
 public class Employee_Program3 {
-
     public static void main(String[] args) {
+        Employee ob1 = new Employee();
+        ob1.work();
+        System.out.println(ob1.getSalary(15000));
 
-        Temporary ob1 = new Temporary();
-        ob1.setDetails("Yogi", 15000, LocalDate.of(2023, 3, 7), 2);
-        ob1.displayInfo();
-
-        System.out.println();
-
-        Permanent ob2 = new Permanent();
-        ob2.setDetails("Sailu", 25000, LocalDate.of(2021, 2, 12));
-        ob2.displayInfo();
+        HRManager ob2 = new HRManager();
+        ob2.work();
+        System.out.println(ob2.getSalary(25000));
+        ob2.addEmployee();
     }
 }

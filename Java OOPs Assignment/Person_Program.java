@@ -18,7 +18,7 @@ class Person {
 
 }
 
-public class Person_Program5 {
+public class Person_Program {
 
     public static void main(String[] args) {
         Person person1 = new Person("Yogi", 22);

@@ -55,7 +55,7 @@ class Triangle extends Shape {
     }
 }
 
-public class Shape_Program11 {
+public class Shape_Program {
 
     public static void main(String[] args) {
         Circle c1 = new Circle(7);

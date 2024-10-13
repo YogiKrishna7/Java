@@ -62,7 +62,7 @@ class SavingsAccount extends BankAccount {
     }
 }
 
-public class BankAccount_Program8 {
+public class BankAccount_Program {
 
     public static void main(String[] args) {
         BankAccount p1 = new BankAccount("Yogi", "1234567", 10000);

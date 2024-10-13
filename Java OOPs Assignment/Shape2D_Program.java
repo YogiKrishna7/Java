@@ -134,7 +134,7 @@ class Circle extends Shape2D {
     // }
 }
 
-public class Shape2D_Program12 {
+public class Shape2D_Program {
 
     public static void main(String[] args) {
         Rectangle r1 = new Rectangle(7, 14);

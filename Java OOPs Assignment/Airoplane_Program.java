@@ -56,7 +56,7 @@ class Airoplane {
 
 }
 
-public class Airoplane_Program1{
+public class Airoplane_Program{
 
     public static void main(String[] args) {
         Airoplane p1 = new Airoplane();

@@ -1,52 +1,77 @@
 /* 
-2) Write a Java program to create a class called "Employee" with a name, job title, and salary
-attributes, and methods to calculate and update salary. 
+3) Write a Java program to create a class called "Employee" with a name, salary, and hire
+date attributes, and a method to calculate years of service. For Temporary Employee &
+Permanent employee 
 */
 
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.Period;
 
 class Employee {
 
-    private Scanner input = new Scanner(System.in);
-    private String name;
-    private String jobTitle;
-    private int salary;
+    String name;
+    double salary;
+    LocalDate hireDate;
 
-    public void setDetails(String n, String jT, int sal) {
+    public void setDetails(String n, double sal, LocalDate hDate) {
         this.name = n;
-        this.jobTitle = jT;
         this.salary = sal;
+        this.hireDate = hDate;
     }
 
     public void displayInfo() {
         System.out.println("Employee Name: " + name);
-        System.out.println("Job Title: " + jobTitle);
         System.out.println("Salary: " + salary);
+        System.out.println("Hire Date: " + hireDate);
+    }
+}
+
+class Temporary extends Employee {
+
+    LocalDate contractEndsIn;
+
+    public void setDetails(String n, double sal, LocalDate hDate, int contractTime) {
+        super.setDetails(n, sal, hDate);
+        this.contractEndsIn = hDate.plusYears(contractTime);
     }
 
-    public void calculateSalary() {
-        System.out.print("How many months do you want to calculate salary for? ");
-        int noMonths = input.nextInt();
+    @Override
+    public void displayInfo() {
+        System.out.println("Employee Type: Temporary");
+        super.displayInfo();
+        System.out.println("End of Contract: " + contractEndsIn);
+        
+    }
+}
 
-        System.out.println("Salary for " + noMonths + " months is: " + (salary * noMonths));
+class Permanent extends Employee {
+
+    public void setDetails(String n, double sal, LocalDate hDate) {
+        super.setDetails(n, sal, hDate);
     }
 
-    public void updateSalary() {
-        System.out.print("Enter new Salary: ");
-        int newSalary = input.nextInt();
-        setDetails(name, jobTitle, newSalary);
+    @Override
+    public void displayInfo() {
+        System.out.println("Employee Type: Permanent");
+        super.displayInfo();
+        LocalDate currentDate = LocalDate.now();
+        System.out.println("Years of service: " + Period.between(super.hireDate, currentDate).getYears());
+        
     }
-
 }
 
 public class Employee_Program2 {
 
     public static void main(String[] args) {
-        Employee person1 = new Employee();
-        person1.setDetails("Yogi", "Full Stack Dev", 65000);
-        person1.displayInfo();
-        person1.calculateSalary();
-        person1.updateSalary();
-        person1.displayInfo();
+
+        Temporary ob1 = new Temporary();
+        ob1.setDetails("Yogi", 15000, LocalDate.of(2023, 3, 7), 2);
+        ob1.displayInfo();
+
+        System.out.println();
+
+        Permanent ob2 = new Permanent();
+        ob2.setDetails("Sailu", 25000, LocalDate.of(2021, 2, 12));
+        ob2.displayInfo();
     }
 }

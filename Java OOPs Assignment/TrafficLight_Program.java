@@ -45,7 +45,7 @@ class TrafficLight {
 
 }
 
-public class TrafficLight_Program4 {
+public class TrafficLight_Program {
 
     public static void main(String[] args) {
 

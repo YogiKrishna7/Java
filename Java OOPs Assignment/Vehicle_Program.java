@@ -18,7 +18,7 @@ class Car extends Vehicle {
     }
 }
 
-public class Vehicle_Program9 {
+public class Vehicle_Program {
 
     public static void main(String[] args) {
         Car c1 = new Car();

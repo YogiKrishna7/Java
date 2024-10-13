@@ -24,7 +24,7 @@ class Rectangle {
 
 }
 
-public class Rectangle_Program7 {
+public class Rectangle_Program {
 
     public static void main(String[] args) {
         Rectangle r1 = new Rectangle();

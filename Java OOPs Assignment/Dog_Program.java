@@ -25,7 +25,7 @@ class Dog {
 
 }
 
-public class Dog_Program6 {
+public class Dog_Program {
 
     public static void main(String[] args) {
         Dog d1 = new Dog("Kittu", "Normal");
