@@ -63,7 +63,7 @@ class Res {
     }
 }
 
-class Customer {
+class Cust {
     Scanner input = new Scanner(System.in);
     int quantity;
 
@@ -114,7 +114,7 @@ public class ResAndCustExtra {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Res m1 = new Res();
-        Customer c1 = new Customer();
+        Cust c1 = new Cust();
 
         System.out.println("WELCOME TO 7restaurant");
         System.out.print("Type 1 for Admin or 2 for Customer: ");
