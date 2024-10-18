@@ -110,7 +110,7 @@ class Customer {
     }
 }
 
-public class ResAndCust {
+public class ResAndCustExtra {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Res m1 = new Res();
