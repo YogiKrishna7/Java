@@ -165,8 +165,6 @@ class Customer {
 
 public class ResAndCust {
     public static void main(String[] args) {
-
-        System.out.println(Thread.activeCount());
         
         Res m1 = new Res();
         m1.setMenu();
