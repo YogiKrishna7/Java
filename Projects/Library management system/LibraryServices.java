@@ -136,7 +136,7 @@ public class LibraryServices {
             if (a.equalsIgnoreCase(e.author)) {
                 System.out.println("\nBook Name: " + e.name);
                 System.out.println("Book Genre: " + e.gener);
-                System.out.println("Book Genre: " + e.author);
+                System.out.println("Book Author: " + e.author);
                 found = true;
             }
         }
@@ -144,5 +144,70 @@ public class LibraryServices {
         if (!found) {
             System.out.println("\nAuthor Not Found!\n");
         }
+    }
+
+    void authenticate() {
+        String[] usernames = { "yogi" };
+        String[] passwords = { "yogi" };
+
+        System.out.println("=== Library Management System ===\n");
+
+        System.out.print("Enter Your Username: ");
+        String username = input.nextLine();
+        System.out.print("Enter Your Password: ");
+        String password = input.nextLine();
+        System.out.println();
+
+        for (int i = 0; i < usernames.length; i++) {
+            if (username.equals(usernames[i]) && password.equals(passwords[i])) {
+                int choice;
+                boolean done = false;
+                do {
+                    System.out.println("\n--- Library Management System ---");
+                    System.out.println("1. Add Book");
+                    System.out.println("2. Get Book by Name");
+                    System.out.println("3. Change Book Details");
+                    System.out.println("4. Delete Book");
+                    System.out.println("5. Show All Genres");
+                    System.out.println("6. Search Books by Genre");
+                    System.out.println("7. Search Books by Author");
+                    System.out.println("8. Exit");
+                    System.out.print("Enter your choice: ");
+                    choice = input.nextInt();
+                    input.nextLine();
+
+                    switch (choice) {
+                        case 1:
+                            addBook();
+                            break;
+                        case 2:
+                            getBook();
+                            break;
+                        case 3:
+                            changeBook();
+                            break;
+                        case 4:
+                            delBook();
+                            break;
+                        case 5:
+                            showGenres();
+                            break;
+                        case 6:
+                            searchBygenre();
+                            break;
+                        case 7:
+                            searchByauthor();
+                            break;
+                        case 8:
+                            System.out.println("\nGoodbye!");
+                            break;
+                        default:
+                            System.out.println("\nInvalid choice, please try again.");
+                    }
+                } while (choice != 8);
+                return;
+            }
+        }
+        System.out.println("Invalid username or password.\n");
     }
 }

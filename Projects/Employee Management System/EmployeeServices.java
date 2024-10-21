@@ -72,6 +72,8 @@ class EmployeeServices {
         System.out.print("\nEnter ID: ");
         int i = input.nextInt();
         input.nextLine();
+        boolean found = false;
+
         for (EmployeeInfo e : elist) {
             if (i == e.id) {
                 System.out.println("\nEmployee ID: " + e.id);
@@ -79,13 +81,21 @@ class EmployeeServices {
                 System.out.println("Employee Role: " + e.role);
                 System.out.println("Employee Salary: " + e.salary);
                 System.out.println();
+                found = true;
+                break;
             }
         }
+        if (!found) {
+            System.out.println("Employee ID: " + i + " is not found!");
+        }
+
     }
 
     void searchByname() {
         System.out.print("\nEnter Name: ");
         String n = input.nextLine();
+        boolean found = false;
+
         for (EmployeeInfo e : elist) {
             if (n.equals(e.name)) {
                 System.out.println("\nEmployee ID: " + e.id);
@@ -93,7 +103,12 @@ class EmployeeServices {
                 System.out.println("Employee Role: " + e.role);
                 System.out.println("Employee Salary: " + e.salary);
                 System.out.println();
+                found = true;
+                break;
             }
+        }
+        if (!found) {
+            System.out.println("Employee Name: " + n + " is not found!");
         }
     }
 
@@ -102,6 +117,7 @@ class EmployeeServices {
         String role = input.nextLine();
         System.out.print("Name: ");
         String name = input.nextLine();
+        boolean found = false;
 
         for (EmployeeInfo e : elist) {
             if (role.equals(e.role) && name.equals(e.name)) {
@@ -110,7 +126,12 @@ class EmployeeServices {
                 System.out.println("Employee ID: " + e.id);
                 System.out.println("Employee Salary: " + e.salary);
                 System.out.println();
+                found = true;
+                break;
             }
+        }
+        if (!found) {
+            System.out.println("Employee " + name + " not found in the role of " + role);
         }
     }
 
@@ -118,14 +139,23 @@ class EmployeeServices {
         System.out.println("\nType Employee Salary: ");
         int s = input.nextInt();
         input.nextLine();
+        System.out.print("Employee Name: ");
+        String name = input.nextLine();
+        boolean found = false;
 
         System.out.println("\nEmployees With salary: " + s);
         for (EmployeeInfo e : elist) {
-            if (s == e.salary) {
+            if (s == e.salary && name.equals(e.name)) {
                 System.out.println("\nName: " + e.name);
+                System.out.println("\nRole: " + e.role);
                 System.out.println("Salary: " + e.salary);
                 System.out.println();
+                found = true;
+                break;
             }
+        }
+        if (!found) {
+            System.out.println("Employee " + name + " is not found in the salary range " + s);
         }
     }
 
@@ -196,4 +226,68 @@ class EmployeeServices {
         }
     }
 
+    void authenticate() {
+        String usernames[] = { "yogi", "prasad" };
+        String passwords[] = { "yogi@2002", "prasad@2004" };
+
+        System.out.println("=== Employee Management System ===\n");
+
+        System.out.print("Enter Your Username: ");
+        String username = input.nextLine();
+        System.out.print("Enter Your Password: ");
+        String password = input.nextLine();
+        System.out.println();
+
+        for (int i = 0; i < usernames.length; i++) {
+            if (username.equals(usernames[i]) && password.equals(passwords[i])) {
+                boolean done = false;
+                do {
+                    System.out.println("=== Main Menu ===");
+                    System.out.println("1) Add Employee");
+                    System.out.println("2) View All Employees");
+                    System.out.println("3) Show All Roles");
+                    System.out.println("4) Search Employee");
+                    System.out.println("5) Update Employee Details");
+                    System.out.println("6) Remove Employee");
+                    System.out.println("7) Exit");
+                    System.out.println("===============================");
+
+                    System.out.print("\nEnter your choice (1-7): ");
+                    int choice = input.nextInt();
+                    input.nextLine();
+
+                    System.out.println();
+
+                    switch (choice) {
+                        case 1:
+                            addEmployee();
+                            break;
+                        case 2:
+                            viewEmployees();
+                            break;
+                        case 3:
+                            allRoles();
+                            break;
+                        case 4:
+                            search();
+                            break;
+                        case 5:
+                            update();
+                            break;
+                        case 6:
+                            removeEmployee();
+                            break;
+                        case 7:
+                            done = true;
+                            System.out.println("Exiting...\n");
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Please select a number between 1 and 7.\n");
+                    }
+                } while (!done);
+                return;
+            }
+        }
+        System.out.println("Invalid username or password.\n");
+    }
 }
