@@ -1,7 +1,6 @@
 import java.util.*;
 
 class EmployeeInfo {
-    Scanner input = new Scanner(System.in);
     String name;
     int id;
     int salary;
