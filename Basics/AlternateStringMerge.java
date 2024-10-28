@@ -1,4 +1,4 @@
-class Solution {
+public class AlternateStringMerge {
     public String mergeAlternately(String word1, String word2) {
         char s[] = word1.toCharArray();
         char t[] = word2.toCharArray();
@@ -12,7 +12,7 @@ class Solution {
     }
 
     public static void main(String[] a) {
-        Solution s = new Solution();
+        AlternateStringMerge s = new Solution();
         s.mergeAlternately("abc", "pqr");
     }
 }
