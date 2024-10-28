@@ -12,7 +12,7 @@ public class AlternateStringMerge {
     }
 
     public static void main(String[] a) {
-        AlternateStringMerge s = new Solution();
+        AlternateStringMerge s = new AlternateStringMerge();
         s.mergeAlternately("abc", "pqr");
     }
 }
