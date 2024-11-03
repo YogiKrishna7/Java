@@ -25,8 +25,7 @@ public class Demo {
                 System.out.println("No employee found with the given ID.");
             }
         } catch (SQLException e) {
-            // Print an error message if there's an issue with SQL execution
-            System.err.println("SQL error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -51,8 +50,7 @@ public class Demo {
             }
 
         } catch (SQLException e) {
-            // Print an error message if there's an issue with database access
-            System.err.println("Error retrieving data: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
