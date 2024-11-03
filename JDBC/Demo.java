@@ -7,7 +7,7 @@ public class Demo {
         String sql = "select first_name from employee_info where employee_id = 1";
 
         // Database connection details: URL, username, and password
-        String url = "jdbc:mysql://localhost:3306/parks_and_recreation";
+        String url = "jdbc:mysql://localhost:3306/parks_and_recruitments";
         String username = "root";
         String password = "yogi7";
 
@@ -20,7 +20,7 @@ public class Demo {
             if (rs.next()) {
                 // Retrieve the value from the first column (first_name) in the current row
                 String name = rs.getString(1);
-                System.out.println("Single Employee Name: " + name); // Print the name
+                System.out.println(name); // Print the name
             } else {
                 System.out.println("No employee found with the given ID.");
             }
@@ -33,7 +33,7 @@ public class Demo {
     void multipleValues() {
         // Define the SQL query to select all columns from employee_info
         String sql = "select * from employee_info";
-        String url = "jdbc:mysql://localhost:3306/parks_and_recreation";
+        String url = "jdbc:mysql://localhost:3306/parks_and_recruitments";
         String username = "root";
         String password = "yogi7";
 
@@ -46,7 +46,7 @@ public class Demo {
             // second column)
             while (rs.next()) {
                 String name = rs.getString(2); // Retrieve the second column (first_name)
-                System.out.println("Employee Name: " + name); // Print the name
+                System.out.println(name); // Print the name
             }
 
         } catch (SQLException e) {
