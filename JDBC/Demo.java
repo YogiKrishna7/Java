@@ -7,7 +7,7 @@ public class Demo {
         String sql = "select first_name from employee_info where employee_id = 1";
 
         // Database connection details: URL, username, and password
-        String url = "jdbc:mysql://localhost:3306/parks_and_recruitments";
+        String url = "jdbc:mysql://localhost:3306/Parks_and_Recreation";
         String username = "root";
         String password = "yogi7";
 
@@ -33,7 +33,7 @@ public class Demo {
     void multipleValues() {
         // Define the SQL query to select all columns from employee_info
         String sql = "select * from employee_info";
-        String url = "jdbc:mysql://localhost:3306/parks_and_recruitments";
+        String url = "jdbc:mysql://localhost:3306/Parks_and_Recreation";
         String username = "root";
         String password = "yogi7";
 
