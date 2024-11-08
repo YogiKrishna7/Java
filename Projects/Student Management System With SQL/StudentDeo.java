@@ -65,26 +65,35 @@ public class StudentDeo {
         System.out.println("Enter new/ update name: ");
         String newName = input.nextLine();
 
-        PreparedStatement ps = c.prepareStatement(quary);
-        ps.setInt(2, id);
-        ps.setString(1, newName);
-        int done = ps.executeUpdate();
-        if (done > 0) {
-            System.out.println("Updated");
-        } else {
-            System.out.println("Update Not Successful");
+        try {
+            PreparedStatement ps = c.prepareStatement(quary);
+            ps.setInt(2, id);
+            ps.setString(1, newName);
+            int done = ps.executeUpdate();
+            if (done > 0) {
+                System.out.println("Updated");
+            } else {
+                System.out.println("Update Not Successful");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 
     void viewStudents() throws SQLException {
         String query = "select * from info";
 
-        PreparedStatement ps = c.prepareStatement(query);
+        try {
+            PreparedStatement ps = c.prepareStatement(query);
 
-        ResultSet rs = ps.executeQuery();
+            ResultSet rs = ps.executeQuery();
 
-        while (rs.next()) {
-            System.out.println(rs.getString(1) + " " + rs.getString(2));
+            while (rs.next()) {
+                System.out.println(rs.getString(1) + " " + rs.getString(2));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
