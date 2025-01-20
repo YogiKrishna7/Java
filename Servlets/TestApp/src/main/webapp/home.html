@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking App - Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+        /* Navbar */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            color: #357ABD;
+        }
+        header {
+            background-color: #4A90E2;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+        header p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .container {
+            padding: 50px;
+        }
+        .search-bar {
+            width: 100%;
+            padding: 12px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .events-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .event-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .event-card h3 {
+            font-size: 20px;
+            color: #333;
+        }
+        .event-card p {
+            font-size: 14px;
+            color: #777;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4A90E2;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #357ABD;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            color: #4A90E2;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <header>
+        <h1>Ticket Booking App</h1>
+        <p>Book your tickets for your favorite movies with few clicks</p>
+    </header>
+    
+        <nav>
+        <a href="home.html">Home</a>
+        <a href="About.html">About Us</a>
+    </nav>
+
+    <div class="container">
+        <input type="text" class="search-bar" placeholder="Search movies...">
+
+        <div class="events-section">
+            <div class="event-card">
+                <h3>Mr Bean Holiday</h3>
+                <p>March 20, 2025</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="event-card">
+                <h3>Avengers 6</h3>
+                <p>February 10, 2025</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="event-card">
+                <h3>Turbo 2</h3>
+                <p>April 5, 2025</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="event-card">
+                <h3>Kung Fu Panda 5</h3>
+                <p>March 20, 2025</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="event-card">
+                <h3>Police Story 2025</h3>
+                <p>February 10, 2025</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="event-card">
+                <h3>Wall E 2</h3>
+                <p>April 5, 2025</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+            <div class="event-card">
+                <h3>IT 3</h3>
+                <p>April 5, 2025</p>
+                <a href="#" class="btn">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ticket Booking App. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
