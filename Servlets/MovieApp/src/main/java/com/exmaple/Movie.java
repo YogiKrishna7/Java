@@ -4,14 +4,14 @@ public class Movie {
 	private String movieName;
 	private String movieRating;
 	private String releaseYear;
-	private double Duration;
+	private double duration;
 
 	public Movie(String movieName, String movieRating, String releaseYear, double duration) {
 		super();
 		this.movieName = movieName;
 		this.movieRating = movieRating;
 		this.releaseYear = releaseYear;
-		Duration = duration;
+		this.duration = duration;
 	}
 
 	public String getMovieName() {
