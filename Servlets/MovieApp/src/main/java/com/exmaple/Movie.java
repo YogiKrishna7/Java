@@ -1,17 +1,27 @@
 package com.exmaple;
 
 public class Movie {
+	private String movieUrl;
 	private String movieName;
 	private String movieRating;
 	private String releaseYear;
 	private double duration;
 
-	public Movie(String movieName, String movieRating, String releaseYear, double duration) {
+	public Movie(String movieUrl, String movieName, String movieRating, String releaseYear, double duration) {
 		super();
+		this.movieUrl = movieUrl;
 		this.movieName = movieName;
 		this.movieRating = movieRating;
 		this.releaseYear = releaseYear;
 		this.duration = duration;
+	}
+
+	public String getMovieUrl() {
+		return movieUrl;
+	}
+
+	public void setMovieUrl(String movieUrl) {
+		this.movieUrl = movieUrl;
 	}
 
 	public String getMovieName() {
@@ -39,11 +49,11 @@ public class Movie {
 	}
 
 	public double getDuration() {
-		return Duration;
+		return duration;
 	}
 
 	public void setDuration(double duration) {
-		Duration = duration;
+		this.duration = duration;
 	}
 
 }

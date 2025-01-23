@@ -9,6 +9,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -25,6 +27,14 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String phone = request.getParameter("phone");
         String password = request.getParameter("password");
+        
+//        response.sendRedirect("dashboard?p="+phone);
+//        
+//        request.setAttribute("p", phone);
+//        
+//        RequestDispatcher rd = request.getRequestDispatcher("/dashboard");
+//        rd.forward(request, response);
+        
         boolean valid = false;
 
         for (User user : userList) {
