@@ -1,8 +1,10 @@
 	package com.exmaple;
 
-	import jakarta.servlet.ServletException;
+	import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 	import jakarta.servlet.annotation.WebServlet;
-	import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServlet;
 	import jakarta.servlet.http.HttpServletRequest;
 	import jakarta.servlet.http.HttpServletResponse;
 	import java.io.IOException;
@@ -33,8 +35,24 @@
 	    @Override
 	    protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	            throws ServletException, IOException {
-//	        response.setContentType("text/html");
+	    	boolean isAuthenticated = false;
+	    	Cookie[] cookies = request.getCookies();
+	    	
+	    	if (cookies != null) {
+	            for (Cookie cookie : cookies) {
+	                if ("user".equals(cookie.getName())) {
+	                    isAuthenticated = true;
+	                    break;
+	                }
+	            }
+	        }
 
+	        if (!isAuthenticated) {
+	            response.getWriter().println("Not authenticated. Redirecting to login...");
+	            response.sendRedirect("index.html");
+	            return;
+	        }
+	    	
 	        StringBuffer html = new StringBuffer();
 
 	        html.append("<!DOCTYPE html>\r\n"
