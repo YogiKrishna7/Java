@@ -1,4 +1,4 @@
-package com.exmaple;
+package movie.app;
 
 public class Movie {
 	private String movieUrl;
